@@ -1,11 +1,12 @@
-import React from 'react';
-import clsx from 'clsx';
-import styles from './styles.module.css';
+import React from "react";
+import clsx from "clsx";
+import styles from "./styles.module.css";
+import post from "./first-page";
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: "Easy to Use",
+    Svg: require("@site/static/img/undraw_docusaurus_mountain.svg").default,
     description: (
       <>
         Docusaurus was designed from the ground up to be easily installed and
@@ -14,8 +15,8 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: "Focus on What Matters",
+    Svg: require("@site/static/img/undraw_docusaurus_tree.svg").default,
     description: (
       <>
         Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
@@ -24,8 +25,8 @@ const FeatureList = [
     ),
   },
   {
-    title: 'Powered by React',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: "Powered by React",
+    Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
     description: (
       <>
         Extend or customize your website layout by reusing React. Docusaurus can
@@ -35,9 +36,9 @@ const FeatureList = [
   },
 ];
 
-function Feature({Svg, title, description}) {
+function Feature({ Svg, title, description }) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx("col col--4")}>
       <div className="text--center">
         <Svg className={styles.featureSvg} role="img" />
       </div>
@@ -58,6 +59,34 @@ export default function HomepageFeatures() {
             <Feature key={idx} {...props} />
           ))}
         </div>
+      </div>
+    </section>
+  );
+}
+const query = [
+  "modified",
+  "2023-10-25T10:01:49",
+  "modified_gmt",
+  "2023-10-25T10:01:49",
+  "slug",
+  "werkvorm-1",
+  "status",
+  "publish",
+  "type",
+  "post",
+  "link",
+  "http://localhost/wp-headless/server/wordpress/werkvorm-1/",
+  "title",
+  {
+    rendered: "Werkvorm 1",
+  },
+];
+
+export function firstPost() {
+  return (
+    <section>
+      <div className="container">
+        <h2>{post.slug}</h2>
       </div>
     </section>
   );
