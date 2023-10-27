@@ -19,22 +19,30 @@
 // }
 // export default firstPost;
 
-fetch("http://localhost/wp-headless/server/wordpress/wp-json/wp/v2/posts")
-  .then((response) => response.json())
-  .then((data) => {})
-  .catch((error) =>
-    console.error("Error fetching data from WordPress:", error)
-  );
-
 import React, { Component } from "react";
+import axios from "axios";
 
 export class werkvormen extends Component {
   state = {
-    posts: [],
+    werkvormen: [],
     isLoaded: false,
   };
+
+  componentDidMount() {
+    axios
+      .get(
+        "http://localhost/wp-headless/server/wordpress/wp-json/wp/v2/werkvormen"
+      )
+      .then((res) =>
+        this.setState({
+          werkvormen: res.data,
+          isLoaded: true,
+        })
+      )
+      .catch((err) => console.log(err));
+  }
   render() {
+    console.log(this.state);
     return <div></div>;
   }
 }
-export default werkvormen;

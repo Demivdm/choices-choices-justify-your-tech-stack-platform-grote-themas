@@ -1,10 +1,21 @@
-import React from "react";
+import React, { Component } from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import HomepageFeatures from "@site/src/components/HomepageFeatures";
 import styles from "./index.module.css";
+import { werkvormen } from "../components/HomepageFeatures/werkvormen";
+
+// class App extends Component {
+//   render() {
+//     return (
+//       <div>
+//         <werkvormen />
+//       </div>
+//     );
+//   }
+// }
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
@@ -18,7 +29,7 @@ function HomepageHeader() {
             className="button button--secondary button--lg"
             to="/docs/intro"
           >
-            Docusaurus Tutorial - 5min ⏱️
+            Docusaurus Tutorial - 5min ⏱️ Something else
           </Link>
         </div>
       </div>
@@ -37,6 +48,18 @@ export default function Home() {
       <main>
         <HomepageFeatures />
       </main>
+    </Layout>
+  );
+}
+
+export function post() {
+  return (
+    <Layout>
+      <section>
+        <div className="container">
+          <werkvormen />
+        </div>
+      </section>
     </Layout>
   );
 }
