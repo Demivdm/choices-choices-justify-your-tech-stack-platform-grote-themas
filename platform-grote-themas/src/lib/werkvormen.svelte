@@ -42,10 +42,10 @@
 
 <script>
   export let posts;
-  console.log("response");
 </script>
 
 <h1>Werkvormen</h1>
+
 {#if posts}
   <ul>
     {#each posts as post}
